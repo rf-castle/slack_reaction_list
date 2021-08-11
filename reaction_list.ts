@@ -37,7 +37,7 @@ function addBlockUserReactions(blocks: Array<KnownBlock>, reaction?: string, use
 
 export function reactionList(app: App) {
     app.shortcut(
-        {callback_id: 'reaction_list', type: 'message_action'},
+        {callback_id: process.env.CALLBACK_ID, type: 'message_action'},
         async ({ack, shortcut, context, client, respond}) => {
             try {
                 await ack()
